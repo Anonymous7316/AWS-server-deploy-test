@@ -6,6 +6,7 @@ jobs:
     deplay:
         runs-on: self-hosted
         environment: DEV
+    
         steps:
             - name: Install nodejs
               uses: actions/setup-node@v4
@@ -17,6 +18,8 @@ jobs:
 
             - name: Install dependencies
               run: npm install
+              env:
+                PORT: ${{ vars.PORT }}
 
             - name: Start server
               run: pm2 restart server
