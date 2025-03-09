@@ -18,5 +18,5 @@ jobs:
               run: npm install
 
             - name: Start server
-              run: pm2 start index.js
+              run: pm2 restart server
               
