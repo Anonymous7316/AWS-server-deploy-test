@@ -1,0 +1,22 @@
+name: Deply to aws
+
+on: workflow_dispatch
+
+jobs:
+    deplay:
+        runs-on: self-hosted
+        steps:
+            - name: Install nodejs
+              uses: action/setup-node@v4
+              with:
+                node-version: 23
+
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Start server
+              run: pm2 start index.js
+              
