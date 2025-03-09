@@ -1,4 +1,4 @@
-name: Deply to aws
+name: Depoly to aws
 
 on: workflow_dispatch
 
@@ -20,8 +20,7 @@ jobs:
               run: npm install
             
             - name: Setting up env variables
-              run: |
-                echo "PORT=${{ vars.PORT }}" >> .env
+              run: echo "PORT=${{ vars.PORT }}" >> .env
 
             - name: Start server
               run: pm2 restart server
