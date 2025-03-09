@@ -4,6 +4,7 @@ on: workflow_dispatch
 
 jobs:
     deplay:
+        environment: DEV
         runs-on: self-hosted
         steps:
             - name: Install nodejs
