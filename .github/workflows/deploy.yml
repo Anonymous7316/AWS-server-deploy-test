@@ -18,8 +18,10 @@ jobs:
 
             - name: Install dependencies
               run: npm install
-              env:
-                PORT: ${{ vars.PORT }}
+            
+            - name: Setting up env variables
+              run: |
+                echo "PORT=${{ vars.PORT }}" >> .env
 
             - name: Start server
               run: pm2 restart server
