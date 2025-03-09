@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 
 app.get('/Ping',(req,res)=>{
-    res.json({message:"Pong"});
+    res.json({message:"Pong..."});
 });
 
 app.listen(process.env.PORT, () => {
